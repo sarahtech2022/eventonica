@@ -32,6 +32,7 @@ const AddEvent = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setEvent(event);
+    //The next line is passing the new event to the backend/database?
     props.postRequest(event);
   };
 

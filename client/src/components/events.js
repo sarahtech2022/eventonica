@@ -36,7 +36,7 @@ function Events() {
       fetch("http://localhost:8080/api/events", {
         method: "POST",
         headers: { "Content-Type": "application/json" }, //Sending it in JSON format
-        body: JSON.stringify(newEvent), //converting the object into a string (anything communicated thru https is thru strings/plain text)
+        body: JSON.stringify(newEvent), //converting the object into a string (anything communicated thru https is thru strings/plain text)-how Browsers communicate
       })
         //what we are recieving from the backend, THIS IS giving us the full list after the user added a change!
         .then((response) => {
@@ -49,6 +49,24 @@ function Events() {
         })
     );
   };
+
+  // **************************Testing Delete request in this Events component:
+  const deleteEvent = async (id) => {
+    //console.log("From the parent", newEvent);
+    //this fetch is sending data back to the backend on what the user updated
+    try {
+      const deleteEvent = await fetch(
+        `http://localhost:8080/api/events/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      setEvents(events.filter((events) => events.id !== id));
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+  //**********************************End of test.
 
   return (
     <div>
