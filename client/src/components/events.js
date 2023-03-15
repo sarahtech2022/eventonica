@@ -74,6 +74,7 @@ function Events() {
         {events.map((event) => (
           <Event
             key={event.id}
+            id={event.id}
             title={event.title}
             location={event.location}
             time={event.eventtime}

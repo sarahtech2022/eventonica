@@ -71,6 +71,7 @@ app.delete("/api/events/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const deleteEvent = await db.query("DELETE FROM events WHERE id= $1", [id]);
+    //SQL query parameters can be used with $ dollar sign, will take the actual value of the id
     res.json("Event was deleted");
   } catch (err) {
     console.log(err.message);

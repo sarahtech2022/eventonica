@@ -23,10 +23,8 @@ const Event = (props) => {
             )}
           </Card.Subtitle>
           <Card.Text>{props.location}</Card.Text>
-          <button type="submit" onClick={() => getIdMethod}>
-            {" "}
-            Delete
-          </button>
+          <p>Id:{props.id}</p>
+          <button type="submit"> Delete</button>
         </Card.Body>
       </Card>
     </div>
