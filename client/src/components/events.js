@@ -62,6 +62,7 @@ function Events() {
           />
         ))}
       </CardGroup>
+      <AddEvent postRequest={postRequest} />
     </div>
   );
 }
