@@ -23,7 +23,7 @@ const Event = (props) => {
             )}
           </Card.Subtitle>
           <Card.Text>{props.location}</Card.Text>
-          <p>Id:{props.id}</p>
+          <p>Event Id:{props.id}</p>
           <button type="submit"> Delete</button>
         </Card.Body>
       </Card>
