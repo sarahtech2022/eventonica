@@ -28,6 +28,7 @@ const Event = (props) => {
             {" "}
             Delete
           </button>
+          <button type="submit" onClick={()=>}>Fave/Unfave</button>
         </Card.Body>
       </Card>
     </div>

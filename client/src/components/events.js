@@ -5,7 +5,7 @@ import AddEvent from "./addevent";
 
 function Events() {
   const [events, setEvents] = useState([]);
-
+  const [icon, setIcon] = useState([]); //cant have a boolean here, need an array of boolean, [true, false, false, etc!!]
   // useEffect(() => {
   //   fetch("http://localhost:8080/api/events")
   //     .then((response) => response.json())
@@ -14,6 +14,11 @@ function Events() {
   //       console.log("Events fetched...", events);
   //     });
   // }, []);
+//if something handles an event its called handle!!! 
+  const handleFaves = (event) => {
+    if ()
+    setIcon()
+  }
 
   const getRequest = () => {
     fetch("http://localhost:8080/api/events")
@@ -54,6 +59,8 @@ function Events() {
   const deleteEvent = async (id) => {
     //console.log("From the parent", newEvent);
     //this fetch is sending data back to the backend on what the user updated
+    //fetch is weird here, it means we are SENDING a delete request to the backend!
+    // to delete this event with this id
     try {
       const deleteEvent = await fetch(
         `http://localhost:8080/api/events/${id}`,
@@ -80,6 +87,7 @@ function Events() {
             time={event.eventtime}
             onDeleteEvent={deleteEvent} //passing in the function from the parent to the child, in order to get it to delete the event!!
             //the name of the prop is onDeleteEvent and the function is deleteEvent
+            onFaves={handleFaves}
           />
         ))}
       </CardGroup>
