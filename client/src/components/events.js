@@ -14,11 +14,16 @@ function Events() {
   //       console.log("Events fetched...", events);
   //     });
   // }, []);
-//if something handles an event its called handle!!! 
+  //if something handles an event its called handle!!!
   const handleFaves = (event) => {
-    if ()
-    setIcon()
-  }
+    //default= false
+    //when user clicks button then change to true
+    if (event === true) {
+      setIcon([...true);
+        //Question: Post request Add to our to our database because its been favorited!! (favorties table)
+        //if false, Delete request to remove it from the second table (favorties table)
+    }
+  };
 
   const getRequest = () => {
     fetch("http://localhost:8080/api/events")
@@ -80,7 +85,7 @@ function Events() {
       <CardGroup className="Events">
         {events.map((event) => (
           <Event
-            key={event.id}
+            key={event.id} //to identify each child to help the DOM render it
             id={event.id}
             title={event.title}
             location={event.location}
@@ -88,6 +93,7 @@ function Events() {
             onDeleteEvent={deleteEvent} //passing in the function from the parent to the child, in order to get it to delete the event!!
             //the name of the prop is onDeleteEvent and the function is deleteEvent
             onFaves={handleFaves}
+            faveid={favorites.id}
           />
         ))}
       </CardGroup>
