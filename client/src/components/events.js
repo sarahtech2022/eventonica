@@ -78,6 +78,8 @@ function Events() {
             title={event.title}
             location={event.location}
             time={event.eventtime}
+            onDeleteEvent={deleteEvent} //passing in the function from the parent to the child, in order to get it to delete the event!!
+            //the name of the prop is onDeleteEvent and the function is deleteEvent
           />
         ))}
       </CardGroup>
