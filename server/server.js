@@ -62,7 +62,7 @@ app.post("/api/events", async (req, res) => {
     console.log(response);
     res.json(response);
   } catch (e) {
-    console.log(error);
+    console.error(error);
     return res.status(400).json({ error });
   }
 });
@@ -74,7 +74,22 @@ app.delete("/api/events/:id", async (req, res) => {
     //SQL query parameters can be used with $ dollar sign, will take the actual value of the id
     res.json("Event was deleted");
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
+  }
+});
+
+app.put("/api/events/:id/:fave", async (req, res) => {
+  try {
+    const { id, fave } = req.params;
+    const { description } = req.body; //what does this do?
+    const updateFaves = await db.query(
+      //why is it declared but never read?
+      "UPDATE events SET fave= $1 WHERE id=$2",
+      [fave, id]
+    );
+    res.json("Event's fave was updated");
+  } catch (err) {
+    console.error(err.message);
   }
 });
 

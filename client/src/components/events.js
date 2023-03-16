@@ -18,6 +18,11 @@ function Events() {
   const handleFaves = (event) => {
     //default= false
     //when user clicks button then change to true
+    //Gisselle: Do a try catch here like our delete request, fetch with url path
+    try {
+      const requestEditFave = await fetch(
+        `http://localhost:8080/api/events/id=${id}&fave=${fave}`)
+    
     if (event === true) {
       setIcon([...true);
         //Question: Post request Add to our to our database because its been favorited!! (favorties table)
