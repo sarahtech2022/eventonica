@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  background-color: #f4c5f4;
 }
 
 .Events {
@@ -22,7 +23,7 @@ h1 {
 #title{
   /* margin: 20px; */
     font-family: "Paytone One";
-    color: #0e010e;
+    color: #c771c7;
     text-transform: uppercase;
     letter-spacing: -2px;
 }
@@ -31,7 +32,7 @@ h1 {
   text-align: center;
   display: block;
   margin: 11px 0 17px 0;
-  font-size: 90px;
+  font-size: 100px;
   line-height: 80px;
   color: #e8a0e8;
   text-shadow: 0 10.36px 8.896px #d89fc8, 0 -2px 1px #fff;
