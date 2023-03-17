@@ -18,3 +18,22 @@ h1 {
   width: 30%;
     height: auto;
 }
+
+#title{
+  /* margin: 20px; */
+    font-family: "Paytone One";
+    color: #ce67cc;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+#titlespan{
+  text-align: center;
+  display: block;
+  margin: 11px 0 17px 0;
+  font-size: 90px;
+  line-height: 80px;
+  color: #e8a0e8;
+  text-shadow: 0 10.36px 8.896px #d89fc8, 0 -2px 1px #fff;
+  letter-spacing: -4px;
+}
