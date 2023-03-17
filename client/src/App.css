@@ -45,3 +45,13 @@
   text-shadow: 0 10.36px 8.896px #d89fc8, 0 -2px 1px #fff;
   letter-spacing: -4px;
 }
+
+#form{
+    display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      margin-bottom: 450px;
+      padding-left: 50px;
+
+}
