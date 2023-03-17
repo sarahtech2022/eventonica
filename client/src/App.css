@@ -63,3 +63,14 @@
 margin-left: 450px;
 padding-bottom: 10px;
 }
+
+#favebutton{
+  margin-left: 20px;
+  background-color: #f4c5f4;
+  
+}
+
+#deletebutton{
+  margin-left: 10px;
+  background-color: rgb(233, 211, 225);
+}

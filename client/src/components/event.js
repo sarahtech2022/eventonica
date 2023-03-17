@@ -31,12 +31,20 @@ const Event = (props) => {
           </Card.Subtitle>
           <Card.Text>{props.location}</Card.Text>
           <p>Event Id:{props.id}</p>
-          <button type="submit" onClick={() => props.onDeleteEvent(props.id)}>
+          <button
+            id="deletebutton"
+            type="submit"
+            onClick={() => props.onDeleteEvent(props.id)}
+          >
             {" "}
             Delete
           </button>
 
-          <button type="submit" onClick={() => setIsFaved(!isFaved)}>
+          <button
+            id="favebutton"
+            type="submit"
+            onClick={() => setIsFaved(!isFaved)}
+          >
             Fave/Unfave
           </button>
           <p>This event is {isFaved ? " " : "not "}my favourite</p>
