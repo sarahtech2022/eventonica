@@ -1,8 +1,15 @@
 import Card from "react-bootstrap/Card";
 import Moment from "react-moment";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const Event = (props) => {
+  const [isFaved, setIsFaved] = useState(props.eventFave);
+
+  // useEffect(() => {
+  //   props.onFaves(props.id, isFaved);
+  // }, [isFaved]);
+
   //**** Our though process on how to get the ID and update the state and then
   //delete it on events:
   //const [getId, setGetId] = useState(null);
@@ -28,9 +35,11 @@ const Event = (props) => {
             {" "}
             Delete
           </button>
-          <button type="submit" onClick={() => props.onFaves(props.id)}>
+
+          <button type="submit" onClick={() => setIsFaved(!isFaved)}>
             Fave/Unfave
           </button>
+
           <span>{props.fave}</span>
           {/* I think????: ternary operator here to get icon to display using the useState? */}
         </Card.Body>

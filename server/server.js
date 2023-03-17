@@ -78,12 +78,13 @@ app.delete("/api/events/:id", async (req, res) => {
   }
 });
 
-app.put("/api/events/:id/:fave", async (req, res) => {
+app.put("/api/events/:id/", async (req, res) => {
   //id and fave are giving ur computer info he stuff before is arbitray
   //conflicts can happen with the same METHOD (but diff methods not conflicts really)
   try {
-    const { id, fave } = req.params;
-    const { description } = req.body; //what does this do?
+    console.log("PUT Request is working");
+    const { id } = req.params;
+    const { fave } = req.body;
     const updateFaves = await db.query(
       //why is it declared but never read?
       "UPDATE events SET fave= $1 WHERE id=$2",

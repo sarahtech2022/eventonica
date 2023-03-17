@@ -15,34 +15,54 @@ function Events() {
   //     });
   // }, []);
   //if something handles an event its called handle!!!
-  const handleFaves = (eventid) => {
-    //default= false //when user clicks button then change to true
-    //pass id in here as an argument because ur backend knows about id but ur front end doesnt
+  ///++++++++++++++++++++ ***************** 1 PREVIOUS CODE: */
+  // const handleFaves = (eventid) => {
+  //   //default= false //when user clicks button then change to true
+  //   //pass id in here as an argument because ur backend knows about id but ur front end doesnt
+  //   try {
+  //     const requestEditFave = () => {
+  //       fetch(`http://localhost:8080/api/events/id=${eventid}&fave=${fave}`, {
+  //         method: "PUT",
+  //       }).then((response) => {
+  //         response.json();
+  //       }); //
+  //       for (let i = 0; i < events.length; i++) {
+  //         if (eventid === events[i].id) {
+  //           //comparing a number with a number
+  //           let updatedEvents = [...events]; //spread operator making a copy, anytime u use spread operator u are doing a shallow copy!
+  //           updatedEvents[i] = {
+  //             //assignment operator is replacing whatever was inside before!!
+  //             ...updatedEvents[i], //using spread operator on updatedEvents (copy every key value pair from UpdatedEvents[i]) will give us id, title, location date, copying it over to new object
+  //             fave: true, //this is a object assignment, key : value
+  //           };
+  //           // updatedEvents[i].fave = true;
+  //           setEvents(updatedEvents); //set it equal to the new array that we just created/modified
+  //         }
+  //       }
+  //     };
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
+  ///+++++++++++++++++++++++ ***************** 2 PREVIOUS CODE: */
+
+  ///**NEW CODE w/ G: */
+  const handleFaves = async (id, isFaved) => {
+    console.log(id);
     try {
-      const requestEditFave = () => {
-        fetch(`http://localhost:8080/api/events/id=${eventid}&fave=${fave}`, {
-          method: "PUT",
-        }).then((response) => {
-          response.json();
-        }); //
-        for (let i = 0; i < events.length; i++) {
-          if (eventid === events[i].id) {
-            //comparing a number with a number
-            let updatedEvents = [...events]; //spread operator making a copy, anytime u use spread operator u are doing a shallow copy!
-            updatedEvents[i] = {
-              //assignment operator is replacing whatever was inside before!!
-              ...updatedEvents[i], //using spread operator on updatedEvents (copy every key value pair from UpdatedEvents[i]) will give us id, title, location date, copying it over to new object
-              fave: true, //this is a object assignment, key : value
-            };
-            // updatedEvents[i].fave = true;
-            setEvents(updatedEvents); //set it equal to the new array that we just created/modified
-          }
-        }
-      };
+      const editFave = await fetch(`http://localhost:8080/api/events/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fave: isFaved }),
+      });
+      console.log(editFave);
+      console.log("favorites button IS WORKING");
     } catch (err) {
-      console.log(err.message);
+      console.log("this is failing");
+      console.error(err.message);
     }
   };
+  ///**NEW CODE w/ G: */
 
   // try {
   //   const requestEditFave = await fetch(
@@ -127,7 +147,7 @@ function Events() {
             onDeleteEvent={deleteEvent} //passing in the function from the parent to the child, in order to get it to delete the event!!
             //the name of the prop is onDeleteEvent and the function is deleteEvent
             onFaves={handleFaves}
-            fave={event.fave}
+            eventFave={event.fave}
           />
         ))}
       </CardGroup>
