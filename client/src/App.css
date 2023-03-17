@@ -32,7 +32,8 @@
     color: #c771c7;
     text-transform: uppercase;
     letter-spacing: -2px;
-    margin-top: 50px;
+    margin-top: 10px;
+  
 }
 
 #titlespan{
@@ -54,4 +55,11 @@
       margin-bottom: 450px;
       padding-left: 50px;
 
+}
+
+#eventimg{
+  width: 15%;
+  height: auto;
+margin-left: 450px;
+padding-bottom: 10px;
 }
