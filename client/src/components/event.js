@@ -40,6 +40,19 @@ const Event = (props) => {
             Fave/Unfave
           </button>
           <p>This event is {isFaved ? " " : "not "}my favourite</p>
+
+          <span>
+            {" "}
+            {isFaved ? (
+              <img
+                id="hearticon"
+                src="https://thenounproject.com/api/private/icons/14447/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkE-ELXVTBPhYHDTBt2GJZl_M_tUixiubVEhA5GlZrFLGaZWxKAZc3lRUnB_hiBD3QY0FonwbQr2qvLFcG_g-FVauxyQ%3D%3D"
+              ></img>
+            ) : (
+              " "
+            )}
+          </span>
+
           <span>{props.fave}</span>
           {/* I think????: ternary operator here to get icon to display using the useState? */}
         </Card.Body>

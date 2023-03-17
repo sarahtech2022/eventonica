@@ -13,3 +13,8 @@ h1 {
   color: #00556e;
   margin-bottom: 50px !important;
 }
+
+#hearticon{
+  width: 30%;
+    height: auto;
+}
