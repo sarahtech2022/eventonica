@@ -39,7 +39,7 @@ const Event = (props) => {
           <button type="submit" onClick={() => setIsFaved(!isFaved)}>
             Fave/Unfave
           </button>
-
+          <p>This event is {isFaved ? " " : "not "}my favourite</p>
           <span>{props.fave}</span>
           {/* I think????: ternary operator here to get icon to display using the useState? */}
         </Card.Body>
