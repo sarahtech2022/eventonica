@@ -46,7 +46,7 @@ const Event = (props) => {
             {isFaved ? (
               <img
                 id="hearticon"
-                src="https://thenounproject.com/api/private/icons/14447/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkE-ELXVTBPhYHDTBt2GJZl_M_tUixiubVEhA5GlZrFLGaZWxKAZc3lRUnB_hiBD3QY0FonwbQr2qvLFcG_g-FVauxyQ%3D%3D"
+                src="http://clipart-library.com/images/qTB5pK7T5.png"
               ></img>
             ) : (
               " "

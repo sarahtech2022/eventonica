@@ -15,14 +15,14 @@ h1 {
 }
 
 #hearticon{
-  width: 30%;
+  width: 20%;
     height: auto;
 }
 
 #title{
   /* margin: 20px; */
     font-family: "Paytone One";
-    color: #ce67cc;
+    color: #0e010e;
     text-transform: uppercase;
     letter-spacing: -2px;
 }
