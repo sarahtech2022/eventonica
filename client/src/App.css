@@ -8,12 +8,18 @@
 
 .Events {
   box-shadow: 1px, gray;
+  margin-bottom: 50px;
 }
 
-h1 {
+/* .Event{
+  margin-right: 200px;
+} */
+
+/* h1 {
   color: #00556e;
   margin-bottom: 50px !important;
-}
+  
+} */
 
 #hearticon{
   width: 20%;
