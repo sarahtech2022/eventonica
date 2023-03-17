@@ -28,7 +28,7 @@ const Event = (props) => {
             {" "}
             Delete
           </button>
-          <button type="submit" onClick={() => props.onFaves(props.faveid)}>
+          <button type="submit" onClick={() => props.onFaves(props.id)}>
             Fave/Unfave
           </button>
           {/* I think????: ternary operator here to get icon to display using the useState? */}

@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.get("/api/events", async (req, res) => {
   //real connection with the DB eventonica
   try {
-    const { rows: events } = await db.query("SELECT * FROM events");
+    const { rows: events } = await db.query("SELECT * FROM events"); //this is including the fave column!! so we can use the same state
     res.send(events);
   } catch (error) {
     console.log(error);
@@ -79,6 +79,8 @@ app.delete("/api/events/:id", async (req, res) => {
 });
 
 app.put("/api/events/:id/:fave", async (req, res) => {
+  //id and fave are giving ur computer info he stuff before is arbitray
+  //conflicts can happen with the same METHOD (but diff methods not conflicts really)
   try {
     const { id, fave } = req.params;
     const { description } = req.body; //what does this do?
