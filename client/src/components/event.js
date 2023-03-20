@@ -1,18 +1,72 @@
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 import Moment from "react-moment";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const EventCard = (props) =>{
+const Event = (props) => {
+  const [isFaved, setIsFaved] = useState(props.eventFave);
 
-    return(
-    <Card style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title>{props.title}</Card.Title>
-      <Card.Subtitle className="mb-2 text-muted">Date: {!props.time ? "TBD" : <Moment format={"DD/MM/YYYY"}>{props.time}</Moment>}</Card.Subtitle>
-      <Card.Text>
-        {props.location}
-      </Card.Text>
-    </Card.Body>
-  </Card>
-  )}
+  // useEffect(() => {
+  //   props.onFaves(props.id, isFaved);
+  // }, [isFaved]);
 
-export default EventCard;
+  //**** Our though process on how to get the ID and update the state and then
+  //delete it on events:
+  //const [getId, setGetId] = useState(null);
+  //getIdMethod will get the ID using SELECT FROM database (it will know which ID because key=event.id- this is attached to each card)
+  //The setGetID will update the state which we then pass to the parent to tell it to delete that card
+  //***
+  return (
+    <div>
+      <Card style={{ width: "18rem" }}>
+        <Card.Body>
+          <Card.Title>{props.title}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            Date:{" "}
+            {!props.time ? (
+              "TBD"
+            ) : (
+              <Moment format={"DD/MM/YYYY"}>{props.time}</Moment>
+            )}
+          </Card.Subtitle>
+          <Card.Text>{props.location}</Card.Text>
+          <p>Event Id:{props.id}</p>
+          <button
+            id="deletebutton"
+            type="submit"
+            onClick={() => props.onDeleteEvent(props.id)}
+          >
+            {" "}
+            Delete
+          </button>
+
+          <button
+            id="favebutton"
+            type="submit"
+            onClick={() => setIsFaved(!isFaved)}
+          >
+            Fave/Unfave
+          </button>
+          <p>This event is {isFaved ? " " : "not "}my favourite</p>
+
+          <span>
+            {" "}
+            {isFaved ? (
+              <img
+                id="hearticon"
+                src="http://clipart-library.com/images/qTB5pK7T5.png"
+              ></img>
+            ) : (
+              " "
+            )}
+          </span>
+
+          <span>{props.fave}</span>
+          {/* I think????: ternary operator here to get icon to display using the useState? */}
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
+
+export default Event;

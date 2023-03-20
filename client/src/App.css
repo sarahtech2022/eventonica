@@ -2,14 +2,76 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  background-color: #f4c5f4;
 }
 
 .Events {
   box-shadow: 1px, gray;
+  margin-bottom: 50px;
 }
 
-h1 {
+/* .Event{
+  margin-right: 200px;
+} */
+
+/* h1 {
   color: #00556e;
   margin-bottom: 50px !important;
+  
+} */
+
+#hearticon{
+  width: 20%;
+    height: auto;
+  margin-left: 90px;
+}
+
+#title{
+  /* margin: 20px; */
+    font-family: "Paytone One";
+    color: #c771c7;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-top: 10px;
+  
+}
+
+#titlespan{
+  text-align: center;
+  display: block;
+  margin: 11px 0 17px 0;
+  font-size: 100px;
+  line-height: 80px;
+  color: #e8a0e8;
+  text-shadow: 0 10.36px 8.896px #d89fc8, 0 -2px 1px #fff;
+  letter-spacing: -4px;
+}
+
+#form{
+    display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      margin-bottom: 450px;
+      padding-left: 50px;
+
+}
+
+#eventimg{
+  width: 15%;
+  height: auto;
+margin-left: 450px;
+padding-bottom: 10px;
+}
+
+#favebutton{
+  margin-left: 20px;
+  background-color: #f4c5f4;
+  
+}
+
+#deletebutton{
+  margin-left: 10px;
+  background-color: rgb(233, 211, 225);
 }
